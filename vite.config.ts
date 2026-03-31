@@ -10,4 +10,8 @@ export default defineConfig({
     babel({ presets: [reactCompilerPreset()] }),
     tailwindcss(),
   ],
+  build: {
+    // Suppress the over-eager single chunk warning since WebGL (Three.js) & Animation chunks are inherently large natively.
+    chunkSizeWarningLimit: 1500, 
+  },
 });

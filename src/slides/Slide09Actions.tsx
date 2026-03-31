@@ -1,9 +1,9 @@
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import SlideTransition from "../components/SlideTransition";
 import TextScramble from "../components/TextScramble";
 
 export default function Slide09Actions() {
-  const containerVariant = {
+  const containerVariant: Variants = {
     hidden: { opacity: 0 },
     visible: { 
       opacity: 1,
@@ -11,12 +11,12 @@ export default function Slide09Actions() {
     }
   };
 
-  const itemVariantNum = {
+  const itemVariantNum: Variants = {
     hidden: { opacity: 0, rotateX: -90 },
     visible: { opacity: 1, rotateX: 0, transition: { type: "tween", ease: "backOut", duration: 0.8 } }
   };
 
-  const itemVariantCard = {
+  const itemVariantCard: Variants = {
     hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, y: 0, transition: { type: "tween", ease: "easeOut", duration: 0.6 } }
   };
@@ -39,7 +39,6 @@ export default function Slide09Actions() {
           <div style={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center" }}>
             <motion.h1 
                variants={itemVariantNum} 
-               style={{ transformOrigin: "bottom" }} 
                className="action-num accent-green" 
                style={{ margin: "0 0 1rem 0", fontSize: "clamp(4rem, 8vw, 6rem)", lineHeight: 1, transformOrigin: "bottom" }}
             >
@@ -54,7 +53,6 @@ export default function Slide09Actions() {
           <div style={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center" }}>
             <motion.h1 
                variants={itemVariantNum} 
-               style={{ transformOrigin: "bottom" }} 
                className="action-num accent-green" 
                style={{ margin: "0 0 1rem 0", fontSize: "clamp(4rem, 8vw, 6rem)", lineHeight: 1, transformOrigin: "bottom" }}
             >
@@ -69,7 +67,6 @@ export default function Slide09Actions() {
           <div style={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center" }}>
             <motion.h1 
                variants={itemVariantNum} 
-               style={{ transformOrigin: "bottom" }} 
                className="action-num accent-green" 
                style={{ margin: "0 0 1rem 0", fontSize: "clamp(4rem, 8vw, 6rem)", lineHeight: 1, transformOrigin: "bottom" }}
             >

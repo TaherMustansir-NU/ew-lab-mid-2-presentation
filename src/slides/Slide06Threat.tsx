@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import SlideTransition from "../components/SlideTransition";
 import TextScramble from "../components/TextScramble";
 
@@ -39,7 +39,7 @@ export default function Slide06Threat() {
 
   }, { scope: containerRef });
 
-  const containerVariant = {
+  const containerVariant: Variants = {
     hidden: { opacity: 0 },
     visible: { 
       opacity: 1,
@@ -50,7 +50,7 @@ export default function Slide06Threat() {
     }
   };
 
-  const itemVariant = {
+  const itemVariant: Variants = {
     hidden: { opacity: 0, x: -50 },
     visible: { opacity: 1, x: 0, transition: { type: "tween", ease: "easeOut", duration: 0.8 } }
   };
