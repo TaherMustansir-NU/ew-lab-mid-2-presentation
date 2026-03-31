@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root {
+  --color-bg: #F5F5ED; 
+  --color-text: #2D2D2A;
+  --color-flaw-red: #7C1919;
+  --color-flaw-light: rgba(124, 25, 25, 0.1);
+  --color-benefit-green: #0A5C36;
+  --color-benefit-light: rgba(10, 92, 54, 0.1);
+  
+  --font-heading: 'Space Grotesk', sans-serif;
+  --font-mono: 'Space Mono', monospace;
+  
+  --shadow-brutal: 4px 4px 0px 0px var(--color-text);
+  --shadow-brutal-hover: 8px 8px 0px 0px var(--color-text);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-mono);
+  overflow: hidden;
+  line-height: 1.5;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  margin: 0;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+h1 { font-size: 5rem; }
+h2 { font-size: 3.5rem; }
+h3 { font-size: 2.5rem; }
+h4 { font-size: 2rem; }
+
+p { margin: 0 0 1.5rem 0; font-size: 1.25rem; }
+
+/* Global Utilities */
+.brutalist-border {
+  border: 4px solid var(--color-text);
+}
+
+.brutalist-card {
+  border: 4px solid var(--color-text);
+  padding: 2rem;
+  background: var(--color-bg);
+  box-shadow: var(--shadow-brutal);
+  transition: all 0.2s ease-in-out;
+}
+
+.brutalist-card:hover {
+  box-shadow: var(--shadow-brutal-hover);
+  transform: translate(-4px, -4px);
+}
+
+.accent-red {
+  color: var(--color-flaw-red);
+}
+
+.accent-green {
+  color: var(--color-benefit-green);
+}
+
+.bg-red {
+  background-color: var(--color-flaw-red);
+  color: var(--color-bg);
+}
+
+.bg-green {
+  background-color: var(--color-benefit-green);
+  color: var(--color-bg);
+}
+
+.slide-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  padding: 4rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.slide-centered {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  padding: 4rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Background Canvas */
+#three-canvas-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  opacity: 0.15;
+  pointer-events: none;
+}
