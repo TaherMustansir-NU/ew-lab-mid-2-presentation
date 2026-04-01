@@ -52,8 +52,28 @@ function App() {
         prevSlide();
       }
     };
+
+    const handleClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      // Prevent slide change when clicking video controls, buttons, or links
+      if (['VIDEO', 'BUTTON', 'A', 'INPUT'].includes(target.tagName)) {
+        return;
+      }
+
+      if (e.clientX > window.innerWidth / 2) {
+        nextSlide();
+      } else {
+        prevSlide();
+      }
+    };
+
     window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
+    window.addEventListener("click", handleClick);
+    
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+      window.removeEventListener("click", handleClick);
+    };
   }, [nextSlide, prevSlide]);
 
   const CurrentSlideComponent = SLIDES[currentSlide];
